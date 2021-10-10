@@ -7,6 +7,10 @@ function randomNumbers (min,max)
     resultado= Math.floor (Math.random () * (max - min + one)) + min
 }
 
+var rev= randomNumbers (1, 50);
+
+console.log (rev)
+
 //objetos literales
     var teclas = {
         UP:37,
