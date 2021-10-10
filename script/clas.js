@@ -1,4 +1,5 @@
 
+
 //funcion para numeros aleatorios
 function randomNumbers (min,max)
 {
@@ -9,7 +10,7 @@ function randomNumbers (min,max)
 
 var rev= randomNumbers (1, 50);
 
-console.log (rev)
+
 
 //objetos literales
     var teclas = {
@@ -18,3 +19,24 @@ console.log (rev)
         LEFT:39,
         RIGHT:40
     }
+
+    var fondo =
+    {
+        url: 'fondo.png',
+        cargaOk: false
+    
+    }
+
+    var pikachu = 
+    {
+        url: "Pikachu.png",
+        cargaOk: false 
+    } 
+
+    var charmander = 
+    {
+        url: "charmander.png",
+        cargaOk: false 
+    } 
+
+    console.log(charmander)
