@@ -1,3 +1,18 @@
+//Canvas
+var cvs =document.getElementById("granja");
+var papel= cvs.getContext ("2d");
+document.addEventListener("keyup",keytpe);
+//posicion del pokemon 
+var ypak = 139;
+var xpak = 250;
+var mov=10;
+//objeo literal para funcion con teclando
+var teclas = {
+    left:37,
+    up:38,
+    right:39,
+    down:40
+};
 
 
 
@@ -11,12 +26,9 @@ function randomNumbers (min,max)
 
 //numeros aleatorio de los pokemones
 
-var ac= aleatorio(10,20);
-var as= aleatorio (10,20);
-var ab= aleatorio (10,20);
-//xp=420
-//yp=
-//movP=
+var ac= randomNumbers(10,20);
+var as= randomNumbers (10,20);
+var ab= randomNumbers (10,20);
 
 //objetos literales
     var teclas = {
@@ -28,7 +40,7 @@ var ab= aleatorio (10,20);
 
     var fondo =
     {
-        url: "image/granja.jpg",
+        url: "image/fondo.png",
         cargaOk: false
     
     }
@@ -105,68 +117,14 @@ var ab= aleatorio (10,20);
         dibujar ()
     }
 
-    function dibujar ()
+    function cargaSquirtle ()
     {
-        if (fondo.cargaOk)
-            {
-              papel.drawImage (fondo.imagen, 0,0)
-            }
-
-        if (charmander.cargaOk)
-         {
-            for(c=0;c<ac;c++)
-             {
-                var cx= aleatorio (0,8);
-                var cy= aleatorio (0,8);
-                cx= cx*50;
-                cy= cy*50;
-                papel.drawImage (charmander.imagen,cx,cy)
-             } 
-
-         }
-         
-        if (squirtle.cargaOk)
-         {
-             for (s=0; s<as; s++)
-                {   
-                    var sx= aleatorio (0,6)
-                    var sy= aleatorio (0,6)
-                    sx = sx*50;
-                    sy= sy*50;
-                    papel.drawImage (charmander.imagen,sx,sy)
-
-                }
-
-         }
-        if (bulbasaur.cargaOk)
-         {
-             for (b=0; b<ab; b++)
-                {
-                    var bx= aleatorio(0,4);
-                    var by= aleatorio(0,4);
-                    bx= bx*50
-                    by= by*50
-
-                    bulbasaur (bulbasaur.imagen, bx,by);
-                }
-         }
-
-    
+        squirtle.cargaOk=true;
+        dibujar ()
     }
-var indexCvs =document.getElementById("pkCvs");
-var cvsPaper = indexCvs.getContext ("2d");
-document.addEventListener("keyup",keytpe);
-var ypak = 139;
-var xpak = 380;
-var mov=10;
-var teclas = {
-    left:37,
-    up:38,
-    right:39,
-    down:40
-};
 
-function keytpe(event)
+    // funcion para mover a Pikachu con teclado
+    function keytpe(event)
 {
     
    
@@ -194,3 +152,59 @@ function keytpe(event)
     
     
 }
+ 
+
+    function dibujar ()
+    {
+        if (fondo.cargaOk)
+            {
+              papel.drawImage (fondo.imagen, 0,0)
+            }
+
+        if (charmander.cargaOk)
+         {
+            for(c=0;c<ac;c++)
+             {
+                var cx= randomNumbers (0,8);
+                var cy= randomNumbers (0,8);
+                cx= cx*50;
+                cy= cy*50;
+                papel.drawImage (charmander.imagen,cx,cy)
+             } 
+
+         }
+         
+        if (squirtle.cargaOk)
+         {
+             for (s=0; s<as; s++)
+                {   
+                    var sx= randomNumbers (0,6)
+                    var sy= randomNumbers(0,6)
+                    sx = sx*50;
+                    sy= sy*50;
+                    papel.drawImage (squirtle.imagen,sx,sy)
+
+                }
+
+         }
+        if (bulbasaur.cargaOk)
+         {
+             for (b=0; b<ab; b++)
+                {
+                    var bx= randomNumbers(0,4);
+                    var by= randomNumbers(0,4);
+                    bx= bx*50
+                    by= by*50
+
+                    papel.drawImage(bulbasaur.imagen, bx,by);
+                }
+         }
+         if (pikachu.cargaOk)
+            {
+                papel.drawImage (pikachu.imagen,ypak,xpak)
+            }
+
+
+    
+    }
+
