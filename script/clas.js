@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 
 //funcion para numeros aleatorios
@@ -140,7 +140,7 @@ var ab= aleatorio (10,20);
          }
         if (bulbasaur.cargaOk)
          {
-             for (b=0; b<ab: b++)
+             for (b=0; b<ab; b++)
                 {
                     var bx= aleatorio(0,4);
                     var by= aleatorio(0,4);
@@ -153,7 +153,6 @@ var ab= aleatorio (10,20);
 
     
     }
-=======
 var indexCvs =document.getElementById("pkCvs");
 var cvsPaper = indexCvs.getContext ("2d");
 document.addEventListener("keyup",keytpe);
@@ -194,6 +193,4 @@ function keytpe(event)
     }
     
     
-   
-} 
->>>>>>> eventsCode
+}
