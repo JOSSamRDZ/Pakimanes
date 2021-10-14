@@ -18,7 +18,7 @@ cargaOk: false // cargaOk es el estado de carga de la imagen, inicialmente es fa
 
 
 var fondo = {
-    url:"tile.png",
+    url:"https://static.platzi.com/media/files/funciones-matematicas-y-numeros-aleatorios-en-java/villa.html",
     cargaOk: false
 };
 

@@ -1,3 +1,19 @@
+//Canvas
+var cvs =document.getElementById("granja");
+var papel= cvs.getContext ("2d");
+document.addEventListener("keyup",keytpe);
+//posicion del pokemon 
+var ypak = 139;
+var xpak = 250;
+var mov=10;
+//objeo literal para funcion con teclando
+var teclas = {
+    left:37,
+    up:38,
+    right:39,
+    down:40
+};
+
 
 
 //funcion para numeros aleatorios
@@ -6,35 +22,26 @@ function randomNumbers (min,max)
     var one= 1
     var resultado;
     resultado= Math.floor (Math.random () * (max - min + one)) + min
+    return resultado;
 }
 
 //numeros aleatorio de los pokemones
 
-var ac= aleatorio(10,20);
-var as= aleatorio (10,20);
-var ab= aleatorio (10,20);
-//xp=420
-//yp=
-//movP=
+var ac= randomNumbers(0,4);
+var as= randomNumbers (0,3);
+var ab= randomNumbers (0,3);
 
 //objetos literales
-    var teclas = {
-        UP:37,
-        DAWN:38,
-        LEFT:39,
-        RIGHT:40
-    }
-
     var fondo =
     {
-        url: "image/granja.jpg",
+        url: "image/fondo.png",
         cargaOk: false
     
     }
 
-    var pikachu = 
+    var arcaine = 
     {
-        url: "image/Pikachu.png",
+        url: "image/arcaine.png",
         cargaOk: false 
     } 
 
@@ -59,13 +66,16 @@ var ab= aleatorio (10,20);
     //clases y insercion de imagenes por url 
  
     fondo.imagen = new Image ();
-    pikachu.imagen = new Image();
+    arcaine.imagen = new Image();
     charmander.imagen = new Image ();
     bulbasaur.imagen = new Image ();
     squirtle.imagen = new Image ();
 
+  
+
+
     fondo.imagen.src= fondo.url;
-    pikachu.imagen.src= pikachu.url;
+    arcaine.imagen.src= arcaine.url;
     charmander.imagen.src= charmander.url;
     bulbasaur.imagen.src= bulbasaur.url;
     squirtle.imagen.src= squirtle.url;
@@ -73,7 +83,7 @@ var ab= aleatorio (10,20);
     //
 
     fondo.imagen.addEventListener ("load", cargarFondo);
-    pikachu.imagen.addEventListener ("load", cargaPikachu);
+    arcaine.imagen.addEventListener ("load", cargaPikachu);
     charmander.imagen.addEventListener ("load", cargaCharmander);
     bulbasaur.imagen.addEventListener ("load", cargaBulbasaur);
     squirtle.imagen.addEventListener ("load", cargaSquirtle);
@@ -88,7 +98,7 @@ var ab= aleatorio (10,20);
 
     function cargaPikachu ()
     {
-        pikachu.cargaOk= true;
+        arcaine.cargaOk= true;
         dibujar ()
     }
   
@@ -104,68 +114,14 @@ var ab= aleatorio (10,20);
         dibujar ()
     }
 
-    function dibujar ()
+    function cargaSquirtle ()
     {
-        if (fondo.cargaOk)
-            {
-              papel.drawImage (fondo.imagen, 0,0)
-            }
-
-        if (charmander.cargaOk)
-         {
-            for(c=0;c<ac;c++)
-             {
-                var cx= aleatorio (0,8);
-                var cy= aleatorio (0,8);
-                cx= cx*50;
-                cy= cy*50;
-                papel.drawImage (charmander.imagen,cx,cy)
-             } 
-
-         }
-         
-        if (squirtle.cargaOk)
-         {
-             for (s=0; s<as; s++)
-                {   
-                    var sx= aleatorio (0,6)
-                    var sy= aleatorio (0,6)
-                    sx = sx*50;
-                    sy= sy*50;
-                    papel.drawImage (charmander.imagen,sx,sy)
-
-                }
-
-         }
-        if (bulbasaur.cargaOk)
-         {
-             for (b=0; b<ab: b++)
-                {
-                    var bx= aleatorio(0,4);
-                    var by= aleatorio(0,4);
-                    bx= bx*50
-                    by= by*50
-
-                    bulbasaur (bulbasaur.imagen, bx,by);
-                }
-         }
-
-    
+        squirtle.cargaOk=true;
+        dibujar ()
     }
-var indexCvs =document.getElementById("pkCvs");
-var cvsPaper = indexCvs.getContext ("2d");
-document.addEventListener("keyup",keytpe);
-var ypak = 139;
-var xpak = 380;
-var mov=10;
-var teclas = {
-    left:37,
-    up:38,
-    right:39,
-    down:40
-};
 
-function keytpe(event)
+    // funcion para mover a Pikachu con teclado
+    function keytpe(event)
 {
     
    
@@ -192,5 +148,63 @@ function keytpe(event)
     }
     
     
-   
-} 
+}
+ 
+
+    function dibujar ()
+    {
+        if (fondo.cargaOk)
+            {
+              papel.drawImage (fondo.imagen, 0,0)
+            }
+
+        if (charmander.cargaOk)
+         {
+            for(c=0;c<ac;c++)
+             {
+                var cx= randomNumbers (0,8);
+                var cy= randomNumbers (0,8);
+                cx= cx*50;
+                cy= cy*50;
+                papel.drawImage (charmander.imagen,cx,cy)
+             } 
+
+         }
+         
+        if (squirtle.cargaOk)
+         {
+             for (s=0; s<as; s++)
+                {   
+                    var bx= randomNumbers(0,4);
+                    var by= randomNumbers(0,4);
+                    bx= bx*50
+                    by= by*50
+
+                    papel.drawImage(squirtle.imagen, bx,by);
+                } 
+                
+
+
+
+         }
+       
+    /*      if (bulbasaur.cargaOk)
+         {
+            for (b=0; b<as; b++)
+            {   
+                var bx= randomNumbers(0,4);
+                var by= randomNumbers(0,4);
+              
+
+                papel.drawImage(bulbasaur.imagen, bx,by);
+            } 
+            
+         } */
+         if (arcaine.cargaOk)
+            {
+                papel.drawImage (arcaine.imagen,ypak,xpak)
+            }
+
+
+    
+        }
