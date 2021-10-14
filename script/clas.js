@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 //funcion para numeros aleatorios
@@ -153,7 +152,6 @@ var ab= aleatorio (10,20);
 
     
     }
-=======
 var indexCvs =document.getElementById("pkCvs");
 var cvsPaper = indexCvs.getContext ("2d");
 document.addEventListener("keyup",keytpe);
@@ -196,4 +194,3 @@ function keytpe(event)
     
    
 } 
->>>>>>> eventsCode
